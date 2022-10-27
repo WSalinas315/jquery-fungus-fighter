@@ -18,10 +18,21 @@ function onReady() {
     $('.dragon-blade').on('click', bladeAttack);
     $('.star-fire').on('click', fireAttack);
     
+    setInterval(fungusHeal, 1000);
     // 🧠 Remember
     // - Handle events that ->
     // - Updates state which is ->
     // - Rendered to the DOM
+}
+
+//fungus heal function
+function fungusHeal(){
+    if(fungusHP < 50){
+        fungusHP += 1;
+        $('.hp-text').text(fungusHP);
+        $('#hp-meter').val(fungusHP);
+    }
+    return;
 }
 
 // Call the attack function for attack type Arcane Septre
